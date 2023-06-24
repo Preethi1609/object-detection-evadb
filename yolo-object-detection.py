@@ -87,5 +87,5 @@ def main():
       annotate_video(response, input_path, output_path)
       Video.from_file(output_path)
 
-if _name_ == '_main_' :
+if __name__ == '_main_' :
     main()
