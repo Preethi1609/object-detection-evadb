@@ -80,7 +80,6 @@ def main():
       response = yolo_query.df()
       print(response)
 
-      # output_path = 'video.mp4'
       input_path = 'videos/' + video_file
       output_path = 'videos/output_' + video_file
 
