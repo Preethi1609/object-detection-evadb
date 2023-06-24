@@ -54,7 +54,7 @@ Could not find image processor class in the image processor config or the model 
 
 [20 rows x 4 columns]
 ```
-![WhatsApp Image 2023-06-25 at 3 19 15 AM (1)](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/218cb85a-83cc-4560-a4ad-28912dadc859)
+![atipicop](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/7aea1f9e-c977-48d3-86da-7ec39b6bd55c)
 
 - **Traffic video**
 ```
