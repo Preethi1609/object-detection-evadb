@@ -37,7 +37,10 @@ preethn@preethn-mac object-detection-evadb %python yolo-object-detection.py traf
 
 [100 rows x 4 columns]
 ```
-![WhatsApp Image 2023-06-25 at 3 19 13 AM (1)](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/f165c5ae-7d58-4064-94a1-443a257d8610)
+
+https://github.com/Preethi1609/object-detection-evadb/assets/80187583/b8361c3d-26e5-447b-a606-c7109c272608
+
+
 
 ## References
-[Eva DB Object Detection Tutorial](#https://colab.research.google.com/github/georgia-tech-db/eva/blob/master/tutorials/02-object-detection.ipynb)
+[Eva DB Object Detection Tutorial- #https://colab.research.google.com/github/georgia-tech-db/eva/blob/master/tutorials/02-object-detection.ipynb]
