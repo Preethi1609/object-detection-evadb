@@ -3,96 +3,41 @@
 
 ## Quick Start
 
-- Footage recorded by DonkeyCar:
+- Traffic lights video processing:
 
 ```shell
-python yolo-object-detection.py ati_footage.mp4
-```
-
-- Traffic video:
-
-```shell
-python yolo-object-detection.py traffic.mp4
+python yolo-object-detection.py traffic_light.mp4
 ```
 
 
 ## Results
 
-- **DonkeyCar video**
-
+- **Traffic lights video**
 ```
-preethn@preethn-mac object-detection-evadb %python yolo-object-detection.py ati_footage.mp4
-Could not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model's feature extractor configuration.
+preethn@preethn-mac object-detection-evadb %python yolo-object-detection.py traffic_light.mp4
                                                    0
 0  Table Successfully dropped: ObjectDetectionVideos
                            0
 0  Number of loaded VIDEO: 1
                                          0
 0  UDF Yolo already exists, nothing added.
-2023-06-25 02:44:31,003 INFO worker.py:1625 -- Started a local Ray instance.
-    objectdetectionvideos.id  ...                     yolo.scores
-0                          0  ...   [0.78, 0.7, 0.59, 0.35, 0.33]
-1                          1  ...  [0.77, 0.77, 0.48, 0.39, 0.32]
-2                          2  ...  [0.78, 0.73, 0.56, 0.42, 0.34]
-3                          3  ...   [0.79, 0.71, 0.47, 0.4, 0.33]
-4                          4  ...        [0.79, 0.69, 0.45, 0.34]
-5                          5  ...  [0.79, 0.74, 0.54, 0.33, 0.31]
-6                          6  ...   [0.8, 0.74, 0.58, 0.35, 0.32]
-7                          7  ...   [0.8, 0.77, 0.56, 0.33, 0.31]
-8                          8  ...        [0.81, 0.81, 0.51, 0.31]
-9                          9  ...   [0.82, 0.81, 0.47, 0.33, 0.3]
-10                        10  ...        [0.82, 0.82, 0.44, 0.32]
-11                        11  ...        [0.83, 0.82, 0.49, 0.32]
-12                        12  ...        [0.84, 0.82, 0.57, 0.32]
-13                        13  ...        [0.83, 0.82, 0.52, 0.33]
-14                        14  ...        [0.84, 0.82, 0.54, 0.33]
-15                        15  ...        [0.84, 0.82, 0.51, 0.32]
-16                        16  ...              [0.84, 0.82, 0.53]
-17                        17  ...              [0.84, 0.82, 0.51]
-18                        18  ...        [0.84, 0.83, 0.52, 0.31]
-19                        19  ...        [0.85, 0.83, 0.58, 0.34]
+2023-06-25 15:49:41,732 INFO worker.py:1625 -- Started a local Ray instance.
+    objectdetectionvideos.id      yolo.labels                                        yolo.bboxes yolo.scores
+0                          0  [traffic light]  [[116.49211883544922, 43.250511169433594, 207....      [0.91]
+1                          1  [traffic light]  [[116.31712341308594, 45.00706481933594, 208.1...       [0.9]
+2                          2  [traffic light]  [[116.3758544921875, 44.99008560180664, 208.14...       [0.9]
+3                          3  [traffic light]  [[116.33740997314453, 44.998966217041016, 208....       [0.9]
+4                          4  [traffic light]  [[116.35423278808594, 44.991519927978516, 208....       [0.9]
+..                       ...              ...                                                ...         ...
+95                        95  [traffic light]  [[118.98309326171875, 44.38285446166992, 209.3...      [0.89]
+96                        96  [traffic light]  [[118.82341766357422, 44.14023208618164, 209.3...      [0.89]
+97                        97  [traffic light]  [[118.77188873291016, 44.094810485839844, 209....      [0.89]
+98                        98  [traffic light]  [[118.9520263671875, 43.920711517333984, 209.2...      [0.89]
+99                        99  [traffic light]  [[118.96548461914062, 43.9997444152832, 209.29...      [0.89]
 
-[20 rows x 4 columns]
-```
-![atipicop](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/7aea1f9e-c977-48d3-86da-7ec39b6bd55c)
-
-- **Traffic video**
-```
-preethn@preethn-mac object-detection-evadb %python yolo-object-detection.py traffic.mp4    
-Could not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model's feature extractor configuration.
-                                                   0
-0  Table Successfully dropped: ObjectDetectionVideos
-                           0
-0  Number of loaded VIDEO: 1
-                                         0
-0  UDF Yolo already exists, nothing added.
-2023-06-25 02:47:47,604 INFO worker.py:1625 -- Started a local Ray instance.
-    objectdetectionvideos.id  ...                                        yolo.scores
-0                          0  ...  [0.87, 0.84, 0.78, 0.74, 0.68, 0.68, 0.6, 0.53...
-1                          1  ...  [0.88, 0.87, 0.78, 0.73, 0.67, 0.67, 0.66, 0.5...
-2                          2  ...  [0.88, 0.87, 0.78, 0.73, 0.67, 0.67, 0.65, 0.5...
-3                          3  ...  [0.88, 0.88, 0.75, 0.71, 0.68, 0.65, 0.63, 0.6...
-4                          4  ...  [0.89, 0.88, 0.82, 0.73, 0.66, 0.66, 0.62, 0.6...
-5                          5  ...  [0.89, 0.87, 0.8, 0.73, 0.72, 0.69, 0.63, 0.6,...
-6                          6  ...  [0.9, 0.87, 0.82, 0.73, 0.71, 0.71, 0.67, 0.57...
-7                          7  ...  [0.91, 0.89, 0.8, 0.73, 0.71, 0.7, 0.69, 0.69,...
-8                          8  ...  [0.9, 0.89, 0.79, 0.73, 0.69, 0.68, 0.64, 0.62...
-9                          9  ...  [0.91, 0.9, 0.78, 0.7, 0.69, 0.69, 0.69, 0.68,...
-10                        10  ...  [0.91, 0.89, 0.82, 0.73, 0.73, 0.72, 0.71, 0.6...
-11                        11  ...  [0.92, 0.88, 0.81, 0.77, 0.76, 0.76, 0.71, 0.7...
-12                        12  ...  [0.91, 0.88, 0.82, 0.73, 0.71, 0.71, 0.7, 0.7,...
-13                        13  ...  [0.91, 0.88, 0.85, 0.73, 0.72, 0.71, 0.71, 0.6...
-14                        14  ...  [0.91, 0.87, 0.84, 0.75, 0.74, 0.72, 0.71, 0.6...
-15                        15  ...  [0.92, 0.88, 0.83, 0.76, 0.74, 0.72, 0.71, 0.6...
-16                        16  ...  [0.91, 0.88, 0.85, 0.74, 0.73, 0.72, 0.72, 0.7...
-17                        17  ...  [0.92, 0.88, 0.84, 0.74, 0.7, 0.69, 0.68, 0.67...
-18                        18  ...  [0.92, 0.88, 0.83, 0.74, 0.7, 0.69, 0.64, 0.63...
-19                        19  ...  [0.91, 0.88, 0.85, 0.73, 0.73, 0.7, 0.68, 0.56...
-
-[20 rows x 4 columns]
+[100 rows x 4 columns]
 ```
 ![WhatsApp Image 2023-06-25 at 3 19 13 AM (1)](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/f165c5ae-7d58-4064-94a1-443a257d8610)
 
-## License
-Copyright (c) 2018-present [Georgia Tech Database Group](http://db.cc.gatech.edu/).
-Licensed under [Apache License](LICENSE).
+## References
+[Eva DB Object Detection Tutorial](#https://colab.research.google.com/github/georgia-tech-db/eva/blob/master/tutorials/02-object-detection.ipynb)

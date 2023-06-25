@@ -34,20 +34,25 @@ def annotate_video(detections, input_video_path, output_video_path):
                 # object bbox
                 frame=cv2.rectangle(frame, (x1, y1), (x2, y2), color1, thickness)
                 # object label
-                cv2.putText(frame, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color1, thickness)
+                if label == "traffic light":
+                    lower_red = (0, 50, 50)
+                    upper_red = (10, 255, 255)
+                    hsv_roi = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+                    mask = cv2.inRange(hsv_roi, lower_red, upper_red)
+                    red_pixel_count = cv2.countNonZero(mask)
+                    threshold = 800
+                    if red_pixel_count > threshold:
+                        cv2.putText(frame, "TRAFFIC LIGHT RED, STOP!", (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color1, thickness)
+                    else:
+                        cv2.putText(frame, "TRAFFIC LIGHT RED, GO!", (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color1, thickness)
+                else:
+                    cv2.putText(frame, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color1, thickness)
                 # frame label
                 cv2.putText(frame, 'Frame ID: ' + str(frame_id), (700, 500), cv2.FONT_HERSHEY_SIMPLEX, 1.2, color2, thickness)
             video.write(frame)
 
-            # Stop after twenty frames (id < 20 in previous query)
-            if frame_id == 20:
+            if frame_id == 100:
                 break
-
-            # Show every fifth frame
-            if frame_id % 5 == 0:
-                plt.imshow(frame)
-                plt.show()
-
 
         frame_id+=1
         ret, frame = vcap.read()
@@ -74,7 +79,7 @@ def main():
       print(response)
 
       yolo_query = cursor.table("ObjectDetectionVideos")
-      yolo_query = yolo_query.filter("id < 20")
+      yolo_query = yolo_query.filter("id < 100")
       yolo_query = yolo_query.select("id, Yolo(data)")
 
       response = yolo_query.df()
