@@ -1,5 +1,5 @@
 # Object detection using EvaDB (YOLO)
-[Eva DB](#https://github.com/georgia-tech-db/eva)
+[Eva DB](https://github.com/georgia-tech-db/eva)
 
 ## Quick Start
 
