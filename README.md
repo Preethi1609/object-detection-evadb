@@ -38,11 +38,11 @@ preethn@preethn-mac object-detection-evadb %python yolo-object-detection.py traf
 [100 rows x 4 columns]
 ```
 
-[VIDEO RESULTS](https://drive.google.com/file/d/1RsUQzldYsdCq8vzcg3HFP-_pCxb-BeAI/view?usp=sharing)
+# [CLICK HERE FOR VIDEO RESULTS](https://drive.google.com/file/d/1RsUQzldYsdCq8vzcg3HFP-_pCxb-BeAI/view?usp=sharing)
 ![Screenshot (430)](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/6efcd8b0-cf3a-42c3-b13e-03d977b36c72)
 ![Screenshot (431)](https://github.com/Preethi1609/object-detection-evadb/assets/80187583/023b979b-9a72-4acb-920a-dfacb8222739)
 
 
 
 ## References
-[Eva DB Object Detection Tutorial- #https://colab.research.google.com/github/georgia-tech-db/eva/blob/master/tutorials/02-object-detection.ipynb]
+[Eva DB Object Detection Tutorial](https://colab.research.google.com/github/georgia-tech-db/eva/blob/master/tutorials/02-object-detection.ipynb)
