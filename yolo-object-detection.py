@@ -1,9 +1,7 @@
 import evadb
 import sys
 import cv2
-from pprint import pprint
-from matplotlib import pyplot as plt
-from ipywidgets import Video, Image
+from ipywidgets import Video
 
 
 def annotate_video(detections, input_video_path, output_video_path):
